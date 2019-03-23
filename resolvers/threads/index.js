@@ -13,11 +13,12 @@ exports.findOne = async function (parent, args) {
 };
 
 exports.create = async function (parent, args) {
-  const thread = await db.Thread.query().eager('[comments.[user], user').insertAndFetch({
+  const thread = await db.Thread.query().eager('user').insertAndFetch({
     userId,
     name,
     description,
   } = args);
+  thread.comments = [];
 
   return thread;
 };

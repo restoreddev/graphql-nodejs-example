@@ -27,6 +27,19 @@ class Thread extends Model {
       }
     };
   }
+
+  static get jsonSchema() {
+    return {
+      type: 'object',
+      required: ['userId', 'name', 'description'],
+      properties: {
+        id: { type: 'integer' },
+        userId: { type: 'integer' },
+        name: { type: 'string', minLength: 1, maxLength: 255 },
+        description: { type: 'string', minLength: 1, maxLength: 255 }
+      }
+    };
+  }
 }
 
 module.exports = Thread;

@@ -26,5 +26,5 @@ type Query {
 
 type Mutation {
   createThread(name: String!, description: String!, userId: Int!): Thread
-  createComment(userId: Int!, threadId: Int!, description: String!): Thread
+  createComment(userId: Int!, threadId: Int!, description: String!): Comment
 }

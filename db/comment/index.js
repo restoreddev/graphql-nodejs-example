@@ -18,6 +18,19 @@ class Comment extends Model {
       }
     };
   }
+
+  static get jsonSchema() {
+    return {
+      type: 'object',
+      required: ['userId', 'threadId', 'description'],
+      properties: {
+        id: { type: 'integer' },
+        userId: { type: 'integer' },
+        threadId: { type: 'integer' },
+        description: { type: 'string', minLength: 1, maxLength: 255 }
+      }
+    };
+  }
 }
 
 module.exports = Comment;
