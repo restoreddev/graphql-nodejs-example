@@ -1,0 +1,30 @@
+type User {
+  id: ID!
+  userName: String!
+  firstName: String
+  lastName: String
+}
+
+type Thread {
+  id: ID!
+  name: String!
+  description: String!
+  user: User!
+  comments: [Comment]
+}
+
+type Comment {
+  id: ID!
+  description: String!
+  user: User!
+}
+
+type Query {
+  thread(id: Int!): Thread
+  threads: [Thread]
+}
+
+type Mutation {
+  createThread(name: String!, description: String!, userId: Int!): Thread
+  createComment(userId: Int!, threadId: Int!, description: String!): Thread
+}
