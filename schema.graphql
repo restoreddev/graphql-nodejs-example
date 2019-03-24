@@ -1,12 +1,12 @@
 type User {
-  id: ID!
+  id: Int!
   userName: String!
   firstName: String
   lastName: String
 }
 
 type Thread {
-  id: ID!
+  id: Int!
   name: String!
   description: String!
   user: User!
@@ -14,7 +14,7 @@ type Thread {
 }
 
 type Comment {
-  id: ID!
+  id: Int!
   description: String!
   user: User!
 }
